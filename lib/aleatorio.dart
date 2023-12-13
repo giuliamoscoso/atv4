@@ -8,7 +8,7 @@ class Aleatorio extends StatefulWidget {
 }
 
 class _AleatorioState extends State<Aleatorio> {
-  String infoTexto = "Informe seu palpite (de 1 a 10)";
+  String infoTexto = "Informe seu palpite (de 0 a 10)";
 
   TextEditingController randomController = TextEditingController();
 
@@ -30,7 +30,7 @@ class _AleatorioState extends State<Aleatorio> {
 
     setState(() {
       if (number > 10 || number < 1) {
-        infoTexto = "Informe um número de 1 a 10!";
+        infoTexto = "Informe seu palpite (de 0 a 10)";
         return;
       } else if (number == randomNumber) {
         infoTexto = "Você acertou! Parabéns!";
@@ -53,7 +53,7 @@ class _AleatorioState extends State<Aleatorio> {
               onPressed: () {
                 randomController.text = "";
                 setState(() {
-                  infoTexto = "Informe seu palpite (de 1 a 10)!";
+                  infoTexto = "Informe seu palpite (de 0 a 10)";
                 });
               },
               icon: const Icon(Icons.refresh, color: Colors.white))
